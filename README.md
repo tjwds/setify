@@ -1,4 +1,4 @@
-# Setify: make Arrays set-like
+# setify-array: make Arrays set-like
 
 ES2024 introduced [some really great Set methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set#set_composition). These work with [any Set-like object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set#set-like_objects) — including Maps out of the box.
 
