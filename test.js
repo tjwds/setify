@@ -5,6 +5,7 @@ function runTests() {
   const setLikeB = setify([2, 3, 4]);
   const setLikeC = setify([1, 2, 3, 4]);
   const setLikeD = setify([1]);
+  const setLikeE = setify([4]);
 
   function assertEqual(actual, expected, description) {
     const actualArray = [...actual];
@@ -43,9 +44,21 @@ function runTests() {
   );
 
   console.log(
+    setA.isSubsetOf(setLikeC) === true
+      ? "✅ isSubsetOf with Set and Set-like object (true case)"
+      : "❌ isSubsetOf with Set and Set-like object (true case)"
+  );
+
+  console.log(
     setA.isSubsetOf(setLikeB) === false
       ? "✅ isSubsetOf with Set and Set-like object (false case)"
       : "❌ isSubsetOf with Set and Set-like object (false case)"
+  );
+
+  console.log(
+    setA.isSupersetOf(setLikeD) === true
+      ? "✅ isSupersetOf with Set-like object and Set (true case)"
+      : "❌ isSupersetOf with Set-like object and Set (true case)"
   );
 
   console.log(
@@ -55,17 +68,16 @@ function runTests() {
   );
 
   console.log(
-    setA.isSubsetOf(setLikeC) === true
-      ? "✅ isSubsetOf with Set and Set-like object (true case)"
-      : "❌ isSubsetOf with Set and Set-like object (true case)"
+    setA.isDisjointFrom(setLikeE) === true
+      ? "✅ isDisjointFrom with Set and Set-like object (true case)"
+      : "❌ isDisjointFrom with Set and Set-like object (true case)"
   );
 
   console.log(
-    setA.isSupersetOf(setLikeD) === true
-      ? "✅ isSupersetOf with Set-like object and Set (true case)"
-      : "❌ isSupersetOf with Set-like object and Set (true case)"
+    setA.isDisjointFrom(setLikeD) === false
+      ? "✅ isDisjointFrom with Set-like object and Set (false case)"
+      : "❌ isDisjointFrom with Set-like object and Set (false case)"
   );
 }
 
-// Run all tests
 runTests();
